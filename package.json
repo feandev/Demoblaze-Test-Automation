@@ -1,0 +1,22 @@
+{
+  "name": "test-automation-product-store",
+  "version": "1.0.0",
+  "description": "Test automation of demo product store",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx playwright test",
+    "test:record": "npx playwright codegen https://www.demoblaze.com/index.html",
+    "test:headed": "npx playwright test --headed",
+    "test:login:headed": "npm run test tests/login.spec.ts -- --headed",
+    "test:signup:headed": "npm run test tests/signup.spec.ts -- --headed",
+    "report": "npx playwright show-report",
+    "trace:zip": "npx playwright show-trace trace.zip"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.41.2",
+    "@types/node": "^20.11.20"
+  }
+}
