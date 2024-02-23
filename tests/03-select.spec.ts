@@ -13,6 +13,7 @@ test.describe("Select three different products and add them to cart", () => {
 
   test.afterEach(async ({ page }) => {
     await selectPage.addToCartButton.click();
+    await selectPage.homePageLink.click();
   });
 
   test("select phone", async ({ page }) => {
