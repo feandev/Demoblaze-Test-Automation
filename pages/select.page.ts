@@ -26,4 +26,7 @@ export class SelectPage {
 
   homePageLink = this.page.getByRole("link", { name: "PRODUCT STORE" });
   addToCartButton = this.page.getByRole("link", { name: "Add to cart" });
+
+
+  
 }
