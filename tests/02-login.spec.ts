@@ -10,10 +10,7 @@ test("successful login", async ({ page }) => {
   const expectedWelcomeMsg = `Welcome ${userName}`;
   const loginPage = new LoginPage(page);
 
-  await loginPage.loginLink.click();
-  await loginPage.loginUsername.fill(userName);
-  await loginPage.loginPassword.fill(userPassword);
-  await loginPage.loginButton.click();
+  loginPage.loginAction(userName, userPassword);
 
   await expect(loginPage.loginWelcomeMsg).toHaveText(expectedWelcomeMsg);
 });

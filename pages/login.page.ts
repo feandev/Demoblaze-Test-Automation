@@ -8,4 +8,11 @@ export class LoginPage {
   loginPassword = this.page.locator("#loginpassword");
   loginButton = this.page.getByRole("button", { name: "Log in" });
   loginWelcomeMsg = this.page.locator("#nameofuser");
+
+  async loginAction(userName: string, userPassword: string) {
+    await this.loginLink.click();
+    await this.loginUsername.fill(userName);
+    await this.loginPassword.fill(userPassword);
+    await this.loginButton.click();
+  }
 }
