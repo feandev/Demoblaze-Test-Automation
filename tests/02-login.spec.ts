@@ -2,7 +2,7 @@ import { test, expect } from "@playwright/test";
 import { loginData } from "../test-data/login.data";
 import { LoginPage } from "../pages/login.page";
 
-test("successful login", async ({ page }) => {
+test("Successful log in", async ({ page }) => {
   await page.goto("/");
 
   const userName = loginData.userName;

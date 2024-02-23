@@ -1,4 +1,4 @@
-# Test automation project of a demo product store
+# UI test automation project of a demo product store
 
 This is my own test automation project based on `Playwright` and `TypeScript`.
 The tested page is a fake product store.

@@ -4,7 +4,7 @@ import { productsData } from "../test-data/products.data";
 import { loginData } from "../test-data/login.data";
 import { LoginPage } from "../pages/login.page";
 
-test.describe("Select three different products and add them to cart", () => {
+test.describe("Log in, select product and add it to cart", () => {
   let loginPage: LoginPage;
   let selectPage: SelectPage;
   let productName: string;
@@ -23,7 +23,7 @@ test.describe("Select three different products and add them to cart", () => {
     await selectPage.homePageLink.click();
   });
 
-  test("Go to phones category and select phone", async ({ page }) => {
+  test("Select phones category and select phone", async ({ page }) => {
     // Arrange
     productName = productsData.phone.model;
 
@@ -36,7 +36,7 @@ test.describe("Select three different products and add them to cart", () => {
     await expect(selectPage.phoneHeadingText).toHaveText(productName);
   });
 
-  test("Go to laptops category and select laptop", async ({ page }) => {
+  test("Select laptops category and select laptop", async ({ page }) => {
     productName = productsData.latop.model;
 
     await selectPage.laptopCategory.click();
@@ -45,7 +45,7 @@ test.describe("Select three different products and add them to cart", () => {
     await expect(selectPage.laptopHeadingText).toHaveText(productName);
   });
 
-  test("Go to monitors category and select monitor", async ({ page }) => {
+  test("Select monitors category and select monitor", async ({ page }) => {
     productName = productsData.monitor.model;
 
     await selectPage.monitorCategory.click();
