@@ -1,4 +1,4 @@
-export const userData = {
+export const loginData = {
   userName: "John Playwright",
   userPassword: "playitright",
 };
