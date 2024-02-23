@@ -7,8 +7,9 @@
     "test": "npx playwright test",
     "test:record": "npx playwright codegen https://www.demoblaze.com/index.html",
     "test:headed": "npx playwright test --headed",
-    "test:login:headed": "npm run test tests/login.spec.ts -- --headed",
-    "test:signup:headed": "npm run test tests/signup.spec.ts -- --headed",
+    "test:login:headed": "npm run test tests/01-login.spec.ts -- --headed",
+    "test:signup:headed": "npm run test tests/02-signup.spec.ts -- --headed",
+    "test:select:headed": "npm run test tests/03-select.spec.ts -- --headed",
     "report": "npx playwright show-report",
     "trace:zip": "npx playwright show-trace trace.zip"
   },
