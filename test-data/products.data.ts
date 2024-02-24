@@ -4,8 +4,8 @@ export const productsData = {
     price: "800",
   },
   latop: {
-    model: "2017 Dell 15.6 Inch",
-    price: "700",
+    model: "MacBook Pro",
+    price: "1100",
   },
   monitor: {
     model: "Apple monitor 24",
