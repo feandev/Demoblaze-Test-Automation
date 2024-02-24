@@ -10,5 +10,4 @@ test("Successful sign up", async ({ page }) => {
   const signUp = new SignUp(page);
 
   await signUp.singUpAction(userName, userPassword);
-
 });

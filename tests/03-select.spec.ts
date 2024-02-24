@@ -1,32 +1,21 @@
 import { test, expect } from "@playwright/test";
 import { SelectPage } from "../pages/select.page";
 import { productsData } from "../test-data/products.data";
-import { loginData } from "../test-data/login.data";
-import { LoginPage } from "../pages/login.page";
-import { AddToCart } from "../components/add-to-cart-component";
 
-test.describe("Log in, select product and add it to cart", () => {
-  let loginPage: LoginPage;
+test.describe("Select product from products category", () => {
   let selectPage: SelectPage;
-  let addToCart: AddToCart;
   let productName: string;
 
   test.beforeEach(async ({ page }) => {
     await page.goto("/");
-    const userName = loginData.userName;
-    const userPassword = loginData.userPassword;
-    loginPage = new LoginPage(page);
     selectPage = new SelectPage(page);
-    addToCart = new AddToCart(page);
-    await loginPage.loginAction(userName, userPassword);
   });
 
   test.afterEach(async ({ page }) => {
-    await addToCart.addToCartButton.click();
     await selectPage.homePageLink.click();
   });
 
-  test("Select phones category and select phone", async ({ page }) => {
+  test("Select phone", async ({ page }) => {
     productName = productsData.phone.model;
 
     await selectPage.phonesCategory.click();
@@ -35,7 +24,7 @@ test.describe("Log in, select product and add it to cart", () => {
     await expect(selectPage.phoneHeadingText).toHaveText(productName);
   });
 
-  test("Select laptops category and select laptop", async ({ page }) => {
+  test("Select laptop", async ({ page }) => {
     productName = productsData.latop.model;
 
     await selectPage.laptopCategory.click();
@@ -44,7 +33,7 @@ test.describe("Log in, select product and add it to cart", () => {
     await expect(selectPage.laptopHeadingText).toHaveText(productName);
   });
 
-  test("Select monitors category and select monitor", async ({ page }) => {
+  test("Select monitor", async ({ page }) => {
     productName = productsData.monitor.model;
 
     await selectPage.monitorCategory.click();
