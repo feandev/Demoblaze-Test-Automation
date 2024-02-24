@@ -3,10 +3,12 @@ import { SelectPage } from "../pages/select.page";
 import { productsData } from "../test-data/products.data";
 import { loginData } from "../test-data/login.data";
 import { LoginPage } from "../pages/login.page";
+import { AddToCart } from "../components/add-to-cart-component";
 
 test.describe("Log in, select product and add it to cart", () => {
   let loginPage: LoginPage;
   let selectPage: SelectPage;
+  let addToCart: AddToCart;
   let productName: string;
 
   test.beforeEach(async ({ page }) => {
@@ -14,24 +16,21 @@ test.describe("Log in, select product and add it to cart", () => {
     const userName = loginData.userName;
     const userPassword = loginData.userPassword;
     loginPage = new LoginPage(page);
-    await loginPage.loginAction(userName, userPassword);
     selectPage = new SelectPage(page);
+    addToCart = new AddToCart(page);
+    await loginPage.loginAction(userName, userPassword);
   });
 
   test.afterEach(async ({ page }) => {
-    await selectPage.addToCartButton.click();
+    await addToCart.addToCartButton.click();
     await selectPage.homePageLink.click();
   });
 
   test("Select phones category and select phone", async ({ page }) => {
-    // Arrange
     productName = productsData.phone.model;
 
-    // Act
     await selectPage.phonesCategory.click();
     await selectPage.phoneModel.click();
-
-    // Assert
 
     await expect(selectPage.phoneHeadingText).toHaveText(productName);
   });
