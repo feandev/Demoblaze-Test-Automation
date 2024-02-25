@@ -18,8 +18,7 @@ test.describe("Select product from products category", () => {
   test("Select phone", async ({ page }) => {
     productName = productsData.phone.model;
 
-    await selectPage.phonesCategory.click();
-    await selectPage.phoneModel.click();
+    await selectPage.selectPhone();
 
     await expect(selectPage.phoneHeadingText).toHaveText(productName);
   });
@@ -27,8 +26,7 @@ test.describe("Select product from products category", () => {
   test("Select laptop", async ({ page }) => {
     productName = productsData.latop.model;
 
-    await selectPage.laptopCategory.click();
-    await selectPage.laptopModel.click();
+    await selectPage.selectLaptop();
 
     await expect(selectPage.laptopHeadingText).toHaveText(productName);
   });
@@ -36,8 +34,7 @@ test.describe("Select product from products category", () => {
   test("Select monitor", async ({ page }) => {
     productName = productsData.monitor.model;
 
-    await selectPage.monitorCategory.click();
-    await selectPage.monitorModel.click();
+    await selectPage.selectMonitor();
 
     await expect(selectPage.monitorHeadingText).toHaveText(productName);
   });

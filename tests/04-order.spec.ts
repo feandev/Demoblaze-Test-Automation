@@ -18,8 +18,7 @@ test("Select product and place an order", async ({ page }) => {
   const orderYear = orderData.orderYear;
   const successMsg = "Thank you for your purchase!";
 
-  await selectPage.laptopCategory.click();
-  await selectPage.laptopModel.click();
+  await selectPage.selectLaptop();
 
   await addToCart.addToCartButton.click();
   await addToCart.cartLink.click();

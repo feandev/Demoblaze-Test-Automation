@@ -25,5 +25,19 @@ export class SelectPage {
   });
 
   homePageLink = this.page.getByRole("link", { name: "PRODUCT STORE" });
-  
+
+  async selectPhone() {
+    await this.phonesCategory.click();
+    await this.phoneModel.click();
+  }
+
+  async selectLaptop() {
+    await this.laptopCategory.click();
+    await this.laptopModel.click();
+  }
+
+  async selectMonitor() {
+    await this.monitorCategory.click();
+    await this.monitorModel.click();
+  }
 }
