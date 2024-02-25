@@ -19,9 +19,7 @@ test("Select product and place an order", async ({ page }) => {
   const successMsg = "Thank you for your purchase!";
 
   await selectPage.selectLaptop();
-
-  await addToCart.addToCartButton.click();
-  await addToCart.cartLink.click();
+  await addToCart.addProduct();
   // due to page lag, extra hover action to ensure that product is present in cart
   await orderPage.deleteProduct.hover();
   await orderPage.placeOrder(
