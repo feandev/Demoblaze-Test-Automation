@@ -3,6 +3,7 @@ import { SelectPage } from "../pages/select.page";
 import { OrderPage } from "../pages/order.page";
 import { orderData } from "../test-data/order.data";
 import { AddToCart } from "../components/add-to-cart-component";
+import { productsData } from "../test-data/products.data";
 
 test("Select product and place an order", async ({ page }) => {
   await page.goto("/");
@@ -16,6 +17,7 @@ test("Select product and place an order", async ({ page }) => {
   const orderCard = orderData.orderCard;
   const orderMonth = orderData.orderMonth;
   const orderYear = orderData.orderYear;
+  const totalPrice = `Total: ${productsData.latop.price}`;
   const successMsg = "Thank you for your purchase!";
 
   await selectPage.selectLaptop();
@@ -31,5 +33,6 @@ test("Select product and place an order", async ({ page }) => {
     orderYear
   );
 
+  await expect(orderPage.priceTotal).toHaveText(totalPrice);
   await expect(orderPage.successHeading).toHaveText(successMsg);
 });

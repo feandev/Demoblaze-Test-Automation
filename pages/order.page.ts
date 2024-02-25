@@ -12,6 +12,7 @@ export class OrderPage {
   orderYear = this.page.getByLabel("Year:");
   purchaseBtn = this.page.getByRole("button", { name: "Purchase" });
   deleteProduct = this.page.getByRole("link", { name: "Delete" });
+  priceTotal = this.page.locator("#totalm");
   successHeading = this.page.getByRole("heading", {
     name: "Thank you for your purchase!",
   });
