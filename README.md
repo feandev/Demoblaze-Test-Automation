@@ -1,11 +1,20 @@
 # Test automation project of a demo product store
 
 This is my own test automation project based on `Playwright` and `TypeScript`.
-The tested page is a fake product store.
+The tested page is a fake product store. 
 
 ## Links
 
 - test site https://www.demoblaze.com/index.html
+
+## Tests
+
+Automation consists four functionall tests:
+
+- sign up
+- login
+- select product
+- place an order
 
 ## Commands
 
