@@ -1,7 +1,7 @@
 # Test automation project of a demo product store :convenience_store:
 
 This is my own test automation project based on `Playwright` and `TypeScript`.<br>
-The tested page is a fake product store. 
+The tested page is a fake product store.<br> 
 In this project I implemented AAA(Arrange, Act, Assert) and Page Object Model (POM).
 
 ## Links
