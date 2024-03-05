@@ -10,7 +10,7 @@ In this project I implemented AAA (Arrange, Act, Assert) and Page Object Model (
 
 ## Tests :runner:
 
-Automation consists four functionall tests:
+Automation consists four functional tests:
 
 - sign up
 - login
