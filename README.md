@@ -2,6 +2,7 @@
 
 This is my own test automation project based on `Playwright` and `TypeScript`.<br>
 The tested page is a fake product store. 
+In this project I implemented AAA(Arrange, Act, Assert) and Page Object Model (POM).
 
 ## Links
 
